@@ -13,7 +13,6 @@ Gem::Specification.new do |s|
   s.homepage    = "https://github.com/privatenote/olive_branch"
   s.license     = "MIT"
 
-  s.add_dependency "rails", ">= 4.0"
   s.add_dependency "multi_json"
 
   s.add_development_dependency "rspec", "~> 3.5.0"
