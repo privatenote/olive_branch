@@ -3,10 +3,10 @@ $:.push File.expand_path("../lib", __FILE__)
 require "olive_branch/version"
 
 Gem::Specification.new do |s|
-  s.name        = "olive_branch"
+  s.name        = "privatenote_olive_branch"
   s.version     = OliveBranch::VERSION
   s.summary     = "Handle camel/snake/dash case conversion"
-  s.description = "Handle camel/snake/dash case conversion"
+  s.description = "Handle camel/snake/dash case conversion. forked from vigetlabs/olive_branch."
   s.authors     = ["Eli Fatsi", "David Eisinger"]
   s.email       = ["eli.fatsi@viget.com", "david.eisinger@viget.com"]
   s.files       = Dir["lib/**/*"] + ["MIT-LICENSE", "README.md"]
