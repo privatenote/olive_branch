@@ -5,6 +5,14 @@
 
 This gem lets your API users pass in and receive camelCased or dash-cased keys, while your Rails app receives and produces snake_cased ones.
 
+## 📣 This repository is forked repo.
+
+The original repository is no longer actively maintained. (last updated on Nov 19, 2021)
+
+To prepare for problems that may arise, we decided to fork and use it.
+
+This forked repository is also under the MIT License same as original repository.
+
 ## Install
 
 1. Add this to your Gemfile and then `bundle install`:
@@ -40,7 +48,7 @@ For more examples, see [our blog post](https://www.viget.com/articles/introducin
 ## Optimizations and configuration
 
 `OliveBranch` uses `multi_json`, which will automatically choose the fastest available JSON parsing library present in your application.
- Most Ruby applications default to using the JSON library that ships with Ruby.  However, by including a coder that `multi_json` considers faster, like [Oj](https://github.com/ohler55/oj) in your gemfile, you can potentially save up to ~20% response time.
+Most Ruby applications default to using the JSON library that ships with Ruby. However, by including a coder that `multi_json` considers faster, like [Oj](https://github.com/ohler55/oj) in your gemfile, you can potentially save up to ~20% response time.
 
 The middleware can be initialized with custom camelize/dasherize implementations, so if you know you have a fixed size set of keys, you can save a considerable amount of time by providing a custom camelize that caches like so:
 
@@ -110,6 +118,7 @@ config.middleware.use OliveBranch::Middleware, exclude_response: -> (env) {
 #### Rails routes & Action Text
 
 If you're using default inflection, exclude the routes that Rails uses
+
 ```ruby
 rails_routes = -> (env) { env['PATH_INFO'].match(/^\/rails/) }
 config.middleware.use OliveBranch::Middleware, inflection: "camel", exclude_params: rails_routes, exclude_response: rails_routes
@@ -131,11 +140,11 @@ You may choose to force inbound transformation on every request by overriding th
 config.middleware.use OliveBranch::Middleware, content_type_check: -> (content_type) { true }
 ```
 
-* * *
+---
 
 OliveBranch is released under the [MIT License](http://www.opensource.org/licenses/MIT). See MIT-LICENSE for further details.
 
-* * *
+---
 
 <a href="http://code.viget.com">
   <img src="http://code.viget.com/github-banner.png" alt="Code At Viget">
